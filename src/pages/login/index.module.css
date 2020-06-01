@@ -1,0 +1,104 @@
+.outer {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../static/imgs/login_bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.inner {
+    width: 350px;
+    padding: 30px 50px;
+    padding-top: 10px;
+    background: #0445abbf;
+    color: rgb(107, 162, 214);
+    z-index: 2;
+    position: fixed;
+    top: 36%;
+    left: 58%;
+    border: 2px solid #1082df;
+}
+
+.inner:hover > .topRight {
+    border-color: #5aa5e2;
+    transform: scale(1);
+}
+.inner:hover > .topLeft {
+    border-color: #5aa5e2;
+    transform: scale(1);
+}
+.inner:hover > .bottomRight {
+    border-color: #5aa5e2;
+    transform: scale(1);
+}
+.inner:hover > .bottomLeft {
+    border-color: #5aa5e2;
+    transform: scale(1);
+}
+
+.topLeft {
+    width: 30px;
+    height: 30px;
+    border-top: 4px solid white;
+    border-left: 4px solid white;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    transition: all .3s ease;
+    transform: scale(0);
+}
+
+.topRight {
+    width: 30px;
+    height: 30px;
+    border-top: 4px solid white;
+    border-right: 4px solid white;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    transition: all .3s ease;
+    transform: scale(0);
+}
+
+.bottomLeft {
+    width: 30px;
+    height: 30px;
+    border-bottom: 4px solid white;
+    border-left: 4px solid white;
+    position: absolute;
+    bottom: -3px;
+    left: -3px;
+    transition: all .3s ease;
+    transform: scale(0);
+}
+
+.bottomRight {
+    width: 30px;
+    height: 30px;
+    border-bottom: 4px solid white;
+    border-right: 4px solid white;
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    transition: all .3s ease;
+    transform: scale(0);
+}
+
+.primaryTitle {
+    text-align: center;
+    position: relative;
+    top: -70px;
+    font-size: 1.6em;
+    color: #8bc3f1;
+}
+
+.login-form-button {
+    width: 100%;
+    height: 2.2em;
+    border-radius: 0px;
+
+}
+
+.input {
+    
+}

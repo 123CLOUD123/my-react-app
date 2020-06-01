@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import { HashRouter as Router, Link, Route } from 'react-router-dom';
+import { HashRouter as Router, Link, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Loadable from "react-loadable";
+import createBrowserHistory from 'history/createBrowserHistory'
+
+const history = createBrowserHistory()
 
 const Loading = ({ isLoading, error }) => {
     // Handle the loading state
@@ -39,19 +42,27 @@ const Test = Loadable({
     loading: Loading
 });
 
+const Login = Loadable({
+  loader: () => import("./pages/login/index"),
+  loading: Loading
+});
+
 class App extends Component {
   render() {
     return (
-      <Router>
-        <div className="App">
-          <Route path="/" exact component={Home}></Route>
-          <Route path="/about" component={About}></Route>
-          <Route path="/product" component={Product}></Route>
-		  <Route path="/test" component={Test}></Route>
-        </div>
+      <div className="App">
+      <Router history={history}>
+        <Switch>
+		      <Route key={4} path="/test" exact component={Test}></Route>
+          <Route key={5} path="/login" exact component={Login}></Route>
+        </Switch>
       </Router>
+      </div>
     );
   }
 }
 
 export default App;
+
+
+
