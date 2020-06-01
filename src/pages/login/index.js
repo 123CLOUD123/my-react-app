@@ -13,7 +13,7 @@ class NormalLoginForm extends Component {
             showEgg: false,
         };
     }
-    
+
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields(async (err, values) => {
@@ -23,16 +23,16 @@ class NormalLoginForm extends Component {
                 return;
             }
             console.log(values);
-            await axios.post('/rest/sys/login', {
+            await axios.post('/rest/user/login', {
                 "captcha": "",
                 "password": values.password,
                 "rememberMe": values.remember,
-                "username": values.username
+                "userName": values.username
             })
 
             const { history } = this.props;
             history.push({
-                pathname: '/'
+                pathname: '/index'
             })
         });
     };
@@ -79,15 +79,9 @@ class NormalLoginForm extends Component {
                             {getFieldDecorator('remember', {
                                 valuePropName: 'checked',
                                 initialValue: true,
-                            })(<Checkbox style={{color: '#5397d2'}}>
+                            })(<Checkbox style={{color: '#5397d2', float: 'left'}}>
                                     记住密码
                                 </Checkbox>)}
-                            {/* <a href="javascript:void(0)" style={{float: 'right', color: '#5397d2'}}  onClick={() => { this.props.history.push('/sendResetUrl') }}>
-                                {'忘记密码'}
-                            </a> */}
-                            {/* <Button type="primary" htmlType="submit" className={styles["login-form-button"]}>
-                                {'登 录'}
-                            </Button> */}
                         </Form.Item>
                         <Form.Item style={{marginTop: -10}}>
                             <Button type="primary" htmlType="submit" className={styles["login-form-button"]}>

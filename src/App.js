@@ -19,23 +19,6 @@ const Loading = ({ isLoading, error }) => {
     }
 };
 
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-)
-
-const About = () => (
-  <div>
-    <h2>About</h2>
-  </div>
-)
-
-const Product = () => (
-  <div>
-    <h2>Product</h2>
-  </div>
-)
 
 const Test = Loadable({
     loader: () => import("./pages/test/test"),
@@ -47,14 +30,20 @@ const Login = Loadable({
   loading: Loading
 });
 
+const Index = Loadable({
+  loader: () => import("./pages/index/index"),
+  loading: Loading
+});
+
 class App extends Component {
   render() {
     return (
       <div className="App">
       <Router history={history}>
         <Switch>
-		      <Route key={4} path="/test" exact component={Test}></Route>
-          <Route key={5} path="/login" exact component={Login}></Route>
+		      <Route key={1} path="/test" exact component={Test}></Route>
+          <Route key={2} path="/login" exact component={Login}></Route>
+          <Route key={2} path="/index" exact component={Index}></Route>
         </Switch>
       </Router>
       </div>
