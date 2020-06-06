@@ -1,6 +1,4 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import styles from './index.module.css';
 import axios from 'axios';
